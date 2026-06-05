@@ -33,7 +33,19 @@ public class WebDriverSetup {
         }
         else {
             System.out.println("URL has been changed.");
+
+
+
         }
+
+       String sampleText =  driver.findElement(By.cssSelector("#td-block-1")).getText();
+        System.out.println(sampleText);
+
+
+
+
+
+
 //        driver.close();
         driver.quit();
 

@@ -10,7 +10,7 @@ import java.time.Duration;
 public class SelectDropdown {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();
 
@@ -31,7 +31,7 @@ public class SelectDropdown {
 //      sel.selectByIndex(2);
       sel.selectByValue("option3");
 
-        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.wait(5000);
 
         driver.quit();
     }

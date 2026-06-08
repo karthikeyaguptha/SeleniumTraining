@@ -1,0 +1,16 @@
+
+
+
+
+    int[] Arr = new Int[5];
+
+
+    ArrayList<String>  al = new ArrayList<>();
+    ArrayList<Int>  al = new ArrayList<>();
+
+
+
+   for(String   var : al)
+   {
+     sout (var);
+   }

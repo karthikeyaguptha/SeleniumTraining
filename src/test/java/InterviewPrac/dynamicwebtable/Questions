@@ -1,0 +1,15 @@
+
+Your task
+
+Write Selenium + Java code to:
+
+Find the Chrome row dynamically.
+Print all values from the Chrome row:
+Name
+Disk
+Network
+CPU
+Memory
+//table[@id='taskTable']/tbody[@id='rows']/child::tr/td[text()='Chrome']/following-sibling::*
+Find the Firefox row dynamically.
+Print its Memory value.

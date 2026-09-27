@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class WindowsHandles {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         WebDriver driver = new ChromeDriver();
@@ -42,6 +42,7 @@ public class WindowsHandles {
 
                 if ("Selenium".equals(driver.getTitle())) {
                     System.out.println(driver.getCurrentUrl());
+                    Thread.sleep(10000);
                 }
 
 //                break;

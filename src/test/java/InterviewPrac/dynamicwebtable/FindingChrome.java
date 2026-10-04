@@ -20,7 +20,7 @@ public class FindingChrome {
     public static WebDriver driver;
     String URL = "https://testautomationpractice.blogspot.com";
     @FindBy
-    String chromeLocator;
+    WebElement chromeLocator;
 
     @BeforeMethod
     public void setUp() {
@@ -36,17 +36,20 @@ public class FindingChrome {
         }
     }
 
-//    public void waitUtil(WebElement webElement)
-//    {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.elementToBeClickable(webElement));
-//    }
+    public WebElement waitUtil_ElementClickable(WebElement webElement)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return webElement;
+    }
 
     @Test
     public void findingChromeRow()
     {
-        chromeLocator = "//table[@id='taskTable']/tbody[@id='rows']/child::tr/td[text()='Chrome']";
-        String chromeText = driver.findElement(By.xpath(chromeLocator)).getText();
+        chromeLocator = driver.findElement(By.xpath("//table[@id='taskTable']/tbody[@id='rows']/child::tr/td[text()='Chrome']"));
+//        String chromeText = driver.findElement(By.xpath(chromeLocator)).getText();
+        String chromeText = waitUtil_ElementClickable(chromeLocator).getText();
+
 
         //Assertion
         Assert.assertEquals(chromeText,"Chrome");

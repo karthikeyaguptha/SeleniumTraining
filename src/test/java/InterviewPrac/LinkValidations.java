@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class LinkValidations {
@@ -22,6 +23,7 @@ public class LinkValidations {
 
         //Getting the URL
         driver.get("https://www.dialpad.com/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
     }
 
     @Test
